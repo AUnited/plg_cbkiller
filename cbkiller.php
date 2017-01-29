@@ -43,26 +43,11 @@ class plgSystemcbkiller extends JPlugin
 		//getting body code and storing as buffer
 		$buffer = JResponse::getBody();
 		
-		$script	=  "<!-- {literal} -->
-        <script type='text/javascript'>
-        window['liv'+'eT'+'ex'] = true,
-        window['l'+'iveT'+'exID'] = ".$id.",
-        window['li'+'veT'+'ex_obj'+'e'+'c'+'t'] = true;
-        (function() {
-        var t = document['creat'+'eEleme'+'nt']('script');
-        t.type ='text/javascript';
-        t.async = true;
-        t.src = '//cs15.livete'+'x.ru/js/clien'+'t.j'+'s';
-        var c = document['ge'+'tEleme'+'n'+'tsBy'+'TagName']('script')[0];
-        if ( c ) c['par'+'entNo'+'d'+'e']['inse'+'rtBefo'+'re'](t, c);
-        else document['docu'+'ment'+'Element']['fi'+'rstCh'+'il'+'d']['ap'+'p'+'endCh'+'ild'](t);
-        })();
-        </script>
-        <!-- {/literal} -->";
+		$script	=	'<link rel="stylesheet" href="https://cdn.envybox.io/widget/cbk.css"><script type="text/javascript" src="https://cdn.envybox.io/widget/cbk.js?wcb_code='.$id.'" charset="UTF-8" async></script>';
 
 		//is it enabled?
 		$javascript='';
-        if ($enabled)	$javascript= $javascript.$script;
+        if ($enabled) $javascript= $javascript.$script;
 
 
 		$buffer = preg_replace ("/<\/body>/", $javascript."\n\n</body>", $buffer);
