@@ -33,6 +33,6 @@
     </fields>
   </config>
     <updateservers>
-        <server type="extension" priority="1" name="cbkiller"><![CDATA[http://help.aunited.ru/cbkiller/update/cbkiller-update.xml]]></server>
+        <server type="extension" priority="1" name="cbkiller"><![CDATA[http://help.aunited.ru/leadgen/update/leadgen-update.xml]]></server>
     </updateservers>
 </extension>
